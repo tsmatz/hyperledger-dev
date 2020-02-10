@@ -24,3 +24,10 @@ RUN mkdir /usr/local/hyperledger && \
     curl -sSL https://raw.githubusercontent.com/hyperledger/fabric/master/scripts/bootstrap.sh | bash -s -- -d -s
 
 ENV PATH=/usr/local/hyperledger/bin:$PATH
+
+# Copy Fabric Config
+
+RUN mkdir /etc/hyperledger && \
+    curl -sSL https://github.com/tsmatz/hyperledger-dev/raw/master/0.1.0/orderer_config.tar.gz | tar xvz -C /etc/hyperledger
+
+ENV FABRIC_CFG_PATH=/etc/hyperledger/fabric
