@@ -22,7 +22,7 @@ ENV GOROOT=/usr/local/go \
 
 RUN mkdir /usr/local/hyperledger && \
     cd /usr/local/hyperledger && \
-    curl -sSL https://raw.githubusercontent.com/hyperledger/fabric/master/scripts/bootstrap.sh | bash -s -- -d -s
+    curl -sSL https://raw.githubusercontent.com/hyperledger/fabric/master/scripts/bootstrap.sh | bash -s -- -d -s 1.4.4 1.4.4 0.4.18
 
 ENV PATH=/usr/local/hyperledger/bin:$PATH
 
