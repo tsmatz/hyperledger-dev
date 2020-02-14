@@ -9,11 +9,12 @@ RUN apt-get update && \
 
 # Install Go
 
-RUN wget --quiet https://dl.google.com/go/go1.9.7.linux-amd64.tar.gz -O /tmp/go1.9.7.linux-amd64.tar.gz && \
-    tar -C /usr/local -xzf /tmp/go1.9.7.linux-amd64.tar.gz && \
-    rm /tmp/go1.9.7.linux-amd64.tar.gz
+RUN wget --quiet https://dl.google.com/go/go1.12.17.linux-amd64.tar.gz -O /tmp/go1.12.17.linux-amd64.tar.gz && \
+    tar -C /usr/local -xzf /tmp/go1.12.17.linux-amd64.tar.gz && \
+    rm /tmp/go1.12.17.linux-amd64.tar.gz
 
-ENV GOPATH=/usr/local/go \
+ENV GOROOT=/usr/local/go \
+    GOPATH=/usr/local/go \
     PATH=/usr/local/go/bin:$PATH
 
 # Install Hyperledger binaries
